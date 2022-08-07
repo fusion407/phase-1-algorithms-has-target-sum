@@ -1,17 +1,35 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for(let i = 0; i<array.length;i++) {
+    const someNumber = target - array[i]
+    for(let j = i + 1; j < array.length; j++) {
+      console.log(array[j] + 'should equal' + someNumber)
+      if(array[j] === someNumber) {
+        return true
+      }
+    }
+  }
+  return false
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  O(n^2)
 */
 
 /* 
-  Add your pseudocode here
+  take one item from the pile
+    compare it to the other items in the pile
+      if they match
+        average those numbers
+        compare to the target, if they match
+          return true
 */
 
 /*
-  Add written explanation of your solution here
+  The function must return true if any pair of numbers in the array adds up
+  to the target number. In order to solve this problem I must use
+  quadratic time complexity O(n^2), comparing each item in the array to each
+  other to find the match, average those items and then comparing it to the target to see
+  if the average matches the target
 */
 
 // You can run `node index.js` to view these console logs
